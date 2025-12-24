@@ -1,0 +1,11 @@
+{
+    "name": "test dummy",
+    "theme": "dark",
+    "command_history": [
+        "set name test dummy",
+        "history",
+        "exit"
+    ],
+    "last_command": "exit",
+    "history_limt": 5
+}
