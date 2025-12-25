@@ -1,11 +1,8 @@
 {
-    "name": "test dummy",
+    "username": "User",
+    "servername": "Server",
     "theme": "dark",
-    "command_history": [
-        "set name test dummy",
-        "history",
-        "exit"
-    ],
-    "last_command": "exit",
-    "history_limt": 5
+    "command_history": [],
+    "last_command": "",
+    "history_limit": 5
 }
