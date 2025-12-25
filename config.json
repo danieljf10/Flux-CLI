@@ -2,7 +2,9 @@
     "username": "User",
     "servername": "Server",
     "theme": "dark",
-    "command_history": [],
-    "last_command": "",
+    "command_history": [
+        "flux reset"
+    ],
+    "last_command": "flux reset",
     "history_limit": 5
 }

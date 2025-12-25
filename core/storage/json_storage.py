@@ -27,7 +27,17 @@ class JSONStorage(BaseStorage):
         }
         self.save(default_user)
 
-    def set_field(self, key, value): 
-        user = self.load()
-        user[key] = value 
-        self.save(user)
+    def add_to_history(self, command):
+        current_settings = self.load()
+        history = current_settings.get("command_history", [])
+        history.append(command)
+        history = history[-current_settings.get("history_limit", 5):]
+        current_settings["command_history"] = history
+        current_settings["last_command"] = command
+        self.save(current_settings)
+    
+    def get_history(self):
+        current_settings = self.load()
+        return current_settings.get("command_history")
+
+

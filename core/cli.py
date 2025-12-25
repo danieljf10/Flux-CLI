@@ -6,7 +6,8 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 CONFIG_FILE = os.path.join(BASE_DIR, "..", "config.json")
 
 storage = JSONStorage(CONFIG_FILE)
-    
+
+os.system("cls" if os.name == "nt" else "clear")
 
 def start():
     while True:
@@ -19,10 +20,11 @@ def start():
         args = tokens[1:]
 
         # find the command by name
-        cmd = next((c for c in commands if c.name == command_name), None)
-
+        cmd = commands.get(command_name)
         if cmd:
-            cmd.run(args,storage)
+            cmd.run(args,storage, commands)
+            if storage:
+                storage.add_to_history(input_stream)
         else:
             print("Command not recognized. Please enter 'help'")
 
