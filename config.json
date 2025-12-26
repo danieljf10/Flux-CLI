@@ -3,8 +3,9 @@
     "servername": "Server",
     "theme": "dark",
     "command_history": [
-        "flux reset"
+        "flux reset",
+        "clear"
     ],
-    "last_command": "flux reset",
+    "last_command": "clear",
     "history_limit": 5
 }

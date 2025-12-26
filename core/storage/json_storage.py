@@ -8,6 +8,10 @@ class JSONStorage(BaseStorage):
         if not os.path.exists(self.filename):
             self.create_user()
     
+    def __getitem__(self, key):
+        data = self.load()
+        return data.get(key)
+    
     def load(self):
         with open(self.filename, "r") as file:
             return json.load(file)
@@ -39,5 +43,3 @@ class JSONStorage(BaseStorage):
     def get_history(self):
         current_settings = self.load()
         return current_settings.get("command_history")
-
-
